@@ -6,7 +6,7 @@
   "author": "Jan Jaap <mail@janjaap.de>",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/jappyjan/swagger-axios-codegen.git",
+    "url": "git+https://github.com/jappyjan/swagger-axios-codegen.git",
     "type": "git"
   },
   "keywords": [
@@ -39,5 +39,14 @@
     "@types/prettier": "^1.12.2",
     "tslint": "^5.10.0",
     "typescript": "^4.0.2"
+  },
+  "description": "A swagger client uses axios and typescript",
+  "bugs": {
+    "url": "https://github.com/jappyjan/swagger-axios-codegen/issues"
+  },
+  "homepage": "https://github.com/jappyjan/swagger-axios-codegen#readme",
+  "directories": {
+    "example": "example",
+    "test": "test"
   }
 }
