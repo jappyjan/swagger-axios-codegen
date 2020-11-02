@@ -26,16 +26,21 @@ export function requestCodegen(paths: IPaths, isV3: boolean, options: ISwaggerOp
     for (const [path, request] of Object.entries(paths)) {
       let methodName = getMethodName(path)
       for (const [method, reqProps] of Object.entries(request)) {
-        methodName =
-          options.methodNameMode === 'operationId'
-            ? reqProps.operationId
-            : options.methodNameMode === 'shortOperationId'
-            ? trimSuffix(reqProps.operationId, reqProps.tags?.[0])
-            : methodName
+        switch (options.methodNameMode) {
+          case 'operationId':
+            methodName = reqProps.operationId;
+            break;
+
+          case 'shortOperationId':
+            methodName = reqProps.operationId.replace(reqProps.tags?.[0] + '.', '');
+            break;
+        }
+
         if (!methodName) {
           // console.warn('method Name is null：', path);
           continue
         }
+
         const contentType = getContentType(reqProps, isV3)
         let formData = ''
         let pathReplace = ''

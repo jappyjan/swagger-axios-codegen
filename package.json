@@ -3,10 +3,10 @@
   "version": "0.11.10",
   "main": "./dist/index",
   "typings": "./dist/",
-  "author": "Manwei Leung <mic.liangwenwei@foxmail.com>",
+  "author": "Jan Jaap <mail@janjaap.de>",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/Manweill/swagger-axios-codegen.git",
+    "url": "https://github.com/jappyjan/swagger-axios-codegen.git",
     "type": "git"
   },
   "keywords": [
@@ -33,7 +33,9 @@
     "structured-log": "^0.2.0"
   },
   "devDependencies": {
+    "@types/camelcase": "^5.2.0",
     "@types/node": "^12.7.2",
+    "@types/pascalcase": "^1.0.0",
     "@types/prettier": "^1.12.2",
     "tslint": "^5.10.0",
     "typescript": "^4.0.2"
