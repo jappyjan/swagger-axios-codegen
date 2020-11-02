@@ -1,6 +1,6 @@
 {
   "name": "@jappyjan/swagger-axios-codegen",
-  "version": "0.11.10",
+  "version": "0.12.0",
   "main": "./dist/index",
   "typings": "./dist/",
   "author": "Jan Jaap <mail@janjaap.de>",
