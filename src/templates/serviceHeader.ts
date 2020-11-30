@@ -2,7 +2,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { ISwaggerOptions } from "../baseInterfaces";
 import { abpGenericTypeDefinition, universalGenericTypeDefinition } from './genericTypeDefinitionTemplate';
-import { trimString } from '../utils';
 
 export function serviceHeader(options: ISwaggerOptions) {
   const classTransformerImport = options.useClassTransformer

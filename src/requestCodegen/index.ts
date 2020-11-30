@@ -3,7 +3,6 @@ import { IPaths } from '../swaggerInterfaces'
 import { getRequestParameters } from './getRequestParameters'
 import { getResponseType } from './getResponseType'
 import camelcase from 'camelcase'
-import { isNullOrUndefined } from 'util'
 import { getRequestBody } from './getRequestBody'
 import { ISwaggerOptions } from '../baseInterfaces'
 import { getContentType } from './getContentType'
@@ -28,12 +27,16 @@ export function requestCodegen(paths: IPaths, isV3: boolean, options: ISwaggerOp
       for (const [method, reqProps] of Object.entries(request)) {
         switch (options.methodNameMode) {
           case 'operationId':
-            methodName = reqProps.operationId;
-            break;
+            methodName = reqProps.operationId
+            break
 
           case 'shortOperationId':
-            methodName = reqProps.operationId.replace(reqProps.tags?.[0] + '.', '');
-            break;
+            const operationIdPartsWithoutControllerName = reqProps.operationId.split(reqProps.tags?.[0] + '.')
+            methodName = reqProps.operationId.substr(reqProps.tags[0].length)
+            methodName = methodName.split('')
+              .map((char, index) => index === 0 ? char.toLowerCase() : char)
+              .join('')
+            break
         }
 
         if (!methodName) {
